@@ -20,6 +20,13 @@ const shuffle = (a) => {
   }
   return a;
 };
+
+/* ---------- pack library (IndexedDB) ---------- */
+const DB_NAME = "quiz-room",
+  DB_VERSION = 2,
+  STORE = "packs",
+  LAST_PACK_KEY = "quiz-room-last-pack";
+
 let bank = STARTER,
   mode = "solo",
   format = "mc",
@@ -29,38 +36,63 @@ let bank = STARTER,
   random = true,
   teamText = "Team 1\nTeam 2",
   notice = "",
-  storageReady = false;
-async function database() {
+  packs = [],
+  currentPackId = null;
+
+function database() {
   return new Promise((resolve, reject) => {
-    const r = indexedDB.open("quiz-room", 1);
-    r.onupgradeneeded = () => r.result.createObjectStore("packs");
+    const r = indexedDB.open(DB_NAME, DB_VERSION);
+    r.onupgradeneeded = () => {
+      const db = r.result;
+      if (!db.objectStoreNames.contains(STORE)) db.createObjectStore(STORE);
+    };
     r.onsuccess = () => resolve(r.result);
     r.onerror = () => reject(r.error);
+    r.onblocked = () => reject(Error("Database is blocked by another tab."));
   });
 }
-async function packStore(value, remove = false) {
-  const db = await database();
+async function db(mode, fn) {
+  const conn = await database();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(
-        "packs",
-        value || remove ? "readwrite" : "readonly",
-      ),
-      store = tx.objectStore("packs");
-    const r = remove
-      ? store.delete("imported")
-      : value
-        ? store.put(value, "imported")
-        : store.get("imported");
+    const tx = conn.transaction(STORE, mode),
+      store = tx.objectStore(STORE);
+    let out;
+    const req = fn(store);
+    if (req) req.onsuccess = () => (out = req.result);
     tx.oncomplete = () => {
-      resolve(r.result);
-      db.close();
+      conn.close();
+      resolve(out);
     };
     tx.onerror = () => {
+      conn.close();
       reject(tx.error);
-      db.close();
+    };
+    tx.onabort = () => {
+      conn.close();
+      reject(tx.error);
     };
   });
 }
+const listPacks = () => db("readonly", (s) => s.getAll());
+const savePack = (p) => db("readwrite", (s) => s.put(p, p.id));
+const removePack = (id) => db("readwrite", (s) => s.delete(id));
+
+/* Move a single "imported" pack (from old versions) into the library. */
+async function migrateLegacy() {
+  try {
+    const old = await db("readonly", (s) => s.get("imported"));
+    if (old && Array.isArray(old.questions) && old.questions.length) {
+      await savePack({
+        ...old,
+        id: "pack-" + Date.now().toString(36),
+        importedAt: Date.now(),
+      });
+      await db("readwrite", (s) => s.delete("imported"));
+    }
+  } catch (_) {}
+}
+
+/* ---------- validation ---------- */
 function validate(data) {
   if (
     data?.schemaVersion !== 1 ||
@@ -112,11 +144,52 @@ function eligible() {
       ((mode === "host" && format === "open") || q.options.length === 4),
   );
 }
+
+/* ---------- pack selection ---------- */
+function selectPack(id, opts = {}) {
+  const found = id ? packs.find((p) => p.id === id) : null;
+  currentPackId = found ? found.id : null;
+  bank = found || STARTER;
+  round = "all";
+  try {
+    if (currentPackId) localStorage.setItem(LAST_PACK_KEY, currentPackId);
+    else localStorage.removeItem(LAST_PACK_KEY);
+  } catch (_) {}
+  if (!opts.silent) setup();
+}
+
+function packListHTML() {
+  const rows = [
+    `<div class="pack ${currentPackId === null ? "selected" : ""}">
+      <button class="pack-pick" data-pack="" aria-pressed="${currentPackId === null}">
+        <strong>${esc(STARTER.title)}</strong>
+        <small>${STARTER.questions.length} questions · built in</small>
+      </button>
+    </div>`,
+  ];
+  for (const p of packs) {
+    const sel = p.id === currentPackId,
+      mc = p.questions.filter((q) => q.options.length === 4).length;
+    rows.push(
+      `<div class="pack ${sel ? "selected" : ""}">
+        <button class="pack-pick" data-pack="${esc(p.id)}" aria-pressed="${sel}">
+          <strong>${esc(p.title || "Imported pack")}</strong>
+          <small>${p.questions.length} questions · ${mc} multiple choice</small>
+        </button>
+        <button class="pack-del" data-del="${esc(p.id)}" aria-label="Delete ${esc(p.title || "pack")}">✕</button>
+      </div>`,
+    );
+  }
+  return rows.join("");
+}
+
+/* ---------- setup screen ---------- */
 function setup() {
   game = null;
   const count = eligible().length;
   $("#app").innerHTML =
-    `<span class="eyebrow">WELCOME TO QUIZ ROOM</span><h1>Good questions.<br>Great company.</h1><p class="lead">A quiet challenge for one, or a lively quiz for the whole office. You bring the teams. We’ll bring the questions.</p><div class="layout"><section class="card"><h2>How are we playing?</h2><div class="row"><button id="solo" class="mode ${mode === "solo" ? "selected" : ""}" aria-pressed="${mode === "solo"}">Play solo<small>Multiple choice · instant feedback</small></button><button id="host" class="mode ${mode === "host" ? "selected" : ""}" aria-pressed="${mode === "host"}">Host the room<small>Read aloud · keep team scores</small></button></div>${mode === "host" ? `<label for="format">Question style</label><select id="format"><option value="mc" ${format === "mc" ? "selected" : ""}>Multiple choice</option><option value="open" ${format === "open" ? "selected" : ""}>Open answer — no options shown</option></select>` : ""}<div class="grid"><div><label for="round">Round</label><select id="round"><option value="all">Mix all rounds</option>${[...new Set(bank.questions.map((q) => q.round))].map((r) => `<option ${round === r ? "selected" : ""} value="${esc(r)}">${esc(r)}</option>`).join("")}</select></div><div><label for="amount">Questions</label><select id="amount">${[5, 10, 15, 20, 30, 50].map((n) => `<option ${n === amount ? "selected" : ""}>${n}</option>`).join("")}</select></div></div><label for="order">Question order</label><select id="order"><option value="random" ${random ? "selected" : ""}>Shuffle questions</option><option value="book" ${!random ? "selected" : ""}>Keep pack order</option></select>${mode === "host" ? `<label for="teams">Teams (one per line, up to 12)</label><textarea id="teams" rows="3" maxlength="600">${esc(teamText)}</textarea><p class="note">Read the questions aloud. Colleagues answer aloud or on paper; only the host needs this screen.</p>` : ""}<p class="note">${count} eligible questions · This game will use ${Math.min(amount, count)}.${mode === "solo" || format === "mc" ? " Only questions with prepared choices are included." : ""}</p><button id="start" class="primary full" ${!count ? "disabled" : ""}>${mode === "solo" ? "Let’s play" : "Start hosting"} →</button></section><aside><section class="card accent"><span class="eyebrow">YOUR QUESTION SHELF</span><h2 style="margin-top:15px">${esc(bank.title || "Imported pack")}</h2><p>${bank.questions.length.toLocaleString()} questions<br>${bank.questions.filter((q) => q.options.length === 4).length} with multiple choice</p><label for="import">Import a question pack (.json)</label><input type="file" id="import" accept=".json,application/json"><p class="note">Import the supplied book-questions.json to use the book. It stays in this browser; the app does not upload it.</p>${bank !== STARTER ? '<button id="reset">Use starter pack</button>' : ""}<p class="note" id="notice" role="status">${esc(notice)}</p></section><section class="card" style="margin-top:20px"><h3>A room, not a login.</h3><p class="note">No accounts, subscriptions or installation. The host runs the quiz and keeps team scores.</p><p class="note">Imported book answers are preserved as printed, including potentially dated or inaccurate facts. Review before hosting.</p></section></aside></div>`;
+    `<span class="eyebrow">WELCOME TO QUIZ ROOM</span><h1>Good questions.<br>Great company.</h1><p class="lead">A quiet challenge for one, or a lively quiz for the whole office. You bring the teams. We’ll bring the questions.</p><div class="layout"><section class="card"><h2>How are we playing?</h2><div class="row"><button id="solo" class="mode ${mode === "solo" ? "selected" : ""}" aria-pressed="${mode === "solo"}">Play solo<small>Multiple choice · instant feedback</small></button><button id="host" class="mode ${mode === "host" ? "selected" : ""}" aria-pressed="${mode === "host"}">Host the room<small>Read aloud · keep team scores</small></button></div>${mode === "host" ? `<label for="format">Question style</label><select id="format"><option value="mc" ${format === "mc" ? "selected" : ""}>Multiple choice</option><option value="open" ${format === "open" ? "selected" : ""}>Open answer — no options shown</option></select>` : ""}<div class="grid"><div><label for="round">Round</label><select id="round"><option value="all">Mix all rounds</option>${[...new Set(bank.questions.map((q) => q.round))].map((r) => `<option ${round === r ? "selected" : ""} value="${esc(r)}">${esc(r)}</option>`).join("")}</select></div><div><label for="amount">Questions</label><select id="amount">${[5, 10, 15, 20, 30, 50].map((n) => `<option ${n === amount ? "selected" : ""}>${n}</option>`).join("")}</select></div></div><label for="order">Question order</label><select id="order"><option value="random" ${random ? "selected" : ""}>Shuffle questions</option><option value="book" ${!random ? "selected" : ""}>Keep pack order</option></select>${mode === "host" ? `<label for="teams">Teams (one per line, up to 12)</label><textarea id="teams" rows="3" maxlength="600">${esc(teamText)}</textarea><p class="note">Read the questions aloud. Colleagues answer aloud or on paper; only the host needs this screen.</p>` : ""}<p class="note">${count} eligible questions · This game will use ${Math.min(amount, count)}.${mode === "solo" || format === "mc" ? " Only questions with prepared choices are included." : ""}</p><button id="start" class="primary full" ${!count ? "disabled" : ""}>${mode === "solo" ? "Let’s play" : "Start hosting"} →</button></section><aside><section class="card accent"><span class="eyebrow">YOUR QUESTION SHELF</span><h2 style="margin-top:15px">${esc(bank.title || "Imported pack")}</h2><p>${bank.questions.length.toLocaleString()} questions<br>${bank.questions.filter((q) => q.options.length === 4).length} with multiple choice</p><div class="packs">${packListHTML()}</div><label for="import">Add question packs (.json — you can pick several)</label><input type="file" id="import" accept=".json,application/json" multiple><p class="note">Packs are saved in this browser only; nothing is uploaded. Click a pack to use it, ✕ to remove it.</p><p class="note" id="notice" role="status">${esc(notice)}</p></section><section class="card" style="margin-top:20px"><h3>A room, not a login.</h3><p class="note">No accounts, subscriptions or installation. The host runs the quiz and keeps team scores.</p><p class="note">Imported answers are preserved as printed, including potentially dated or inaccurate facts. Review before hosting.</p></section></aside></div>`;
+
   $("#solo").onclick = () => {
     capture();
     mode = "solo";
@@ -148,46 +221,89 @@ function setup() {
     capture();
     start();
   };
-  $("#import").onchange = importPack;
-  if ($("#reset"))
-    $("#reset").onclick = async () => {
-      bank = STARTER;
-      round = "all";
+  $("#import").onchange = importPacks;
+
+  document.querySelectorAll("[data-pack]").forEach((b) => {
+    b.onclick = () => {
+      capture();
+      notice = "";
+      selectPack(b.dataset.pack || null);
+    };
+  });
+  document.querySelectorAll("[data-del]").forEach((b) => {
+    b.onclick = async () => {
+      const id = b.dataset.del,
+        p = packs.find((x) => x.id === id);
+      if (!confirm(`Delete “${p?.title || "this pack"}” from this browser?`))
+        return;
       try {
-        await packStore(null, true);
-        notice = "Starter pack restored.";
-      } catch {
-        notice =
-          "Starter pack restored for this visit; saved data could not be removed.";
+        await removePack(id);
+        packs = packs.filter((x) => x.id !== id);
+        if (currentPackId === id) selectPack(null, { silent: true });
+        notice = "Pack deleted.";
+      } catch (_) {
+        notice = "Could not delete this pack.";
       }
       setup();
     };
+  });
 }
+
 function capture() {
   if ($("#teams")) teamText = $("#teams").value;
   if ($("#order")) random = $("#order").value === "random";
 }
-async function importPack(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  try {
-    if (file.size > 15 * 1024 * 1024)
-      throw Error("Choose a JSON pack smaller than 15 MB.");
-    const data = validate(JSON.parse(await file.text()));
-    bank = data;
-    round = "all";
+
+/* ---------- import one or more files ---------- */
+async function importPacks(e) {
+  const files = [...(e.target.files || [])];
+  e.target.value = "";
+  if (!files.length) return;
+
+  const added = [],
+    failed = [];
+  let unsaved = false;
+
+  for (const file of files) {
     try {
-      await packStore(bank);
-      notice = "Pack imported and saved on this browser.";
-    } catch {
-      notice =
-        "Pack imported for this visit. Browser storage unavailable; reimport next time.";
+      if (file.size > 15 * 1024 * 1024) throw Error("larger than 15 MB");
+      const data = validate(JSON.parse(await file.text()));
+      const pack = {
+        ...data,
+        id:
+          "pack-" +
+          Date.now().toString(36) +
+          "-" +
+          Math.random().toString(36).slice(2, 8),
+        importedAt: Date.now(),
+      };
+      try {
+        await savePack(pack);
+      } catch (_) {
+        unsaved = true;
+      }
+      packs.push(pack);
+      added.push(pack);
+    } catch (err) {
+      failed.push(`${file.name} — ${err.message}`);
     }
-    setup();
-  } catch (err) {
-    $("#notice").textContent = "Import failed: " + err.message;
   }
+
+  if (added.length) {
+    selectPack(added[added.length - 1].id, { silent: true });
+    notice =
+      added.length === 1
+        ? `“${added[0].title || "Pack"}” is ready.`
+        : `${added.length} packs added and ready.`;
+    if (unsaved) notice += " Some could not be saved for next visit.";
+  }
+  if (failed.length)
+    notice =
+      (notice ? notice + " " : "") + "Import failed: " + failed.join(" · ");
+  setup();
 }
+
+/* ---------- game ---------- */
 function start() {
   const pool = eligible();
   if (!pool.length) return;
@@ -332,17 +448,23 @@ window.addEventListener("beforeunload", (e) => {
     e.returnValue = "";
   }
 });
+
 async function init() {
   try {
-    const saved = await packStore();
-    if (saved) {
-      bank = validate(saved);
-      notice = "Your imported pack is ready.";
-    }
-  } catch {
+    await migrateLegacy();
+    packs = (await listPacks()).filter(
+      (p) => p && Array.isArray(p.questions) && p.questions.length,
+    );
+  } catch (_) {
+    packs = [];
     notice =
-      "Local saving is unavailable. You can still play and import a pack for this visit.";
+      "Local saving is unavailable. You can still add packs for this visit.";
   }
+  let last = null;
+  try {
+    last = localStorage.getItem(LAST_PACK_KEY);
+  } catch (_) {}
+  selectPack(last, { silent: true });
   setup();
 }
 init();
