@@ -4,6 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Quiz Room — a little friendly competition</title>
+    <script>
+      (function () {
+        let saved = null;
+        try {
+          saved = localStorage.getItem("quiz-room-theme");
+        } catch (_) {}
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          saved === "dark" || saved === "light"
+            ? saved
+            : prefersDark
+              ? "dark"
+              : "light";
+        document.addEventListener("DOMContentLoaded", function () {
+          const toggle = document.getElementById("theme-toggle");
+          function updateLabel() {
+            const dark = document.documentElement.dataset.theme === "dark";
+            toggle.textContent = dark ? "Light mode" : "Dark mode";
+            toggle.setAttribute(
+              "aria-label",
+              dark ? "Switch to light mode" : "Switch to dark mode",
+            );
+          }
+          toggle.addEventListener("click", function () {
+            const theme =
+              document.documentElement.dataset.theme === "dark"
+                ? "light"
+                : "dark";
+            document.documentElement.dataset.theme = theme;
+            try {
+              localStorage.setItem("quiz-room-theme", theme);
+            } catch (_) {}
+            updateLabel();
+          });
+          updateLabel();
+        });
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script src="starter.js" defer></script>
     <script src="app.js" defer></script>
@@ -12,7 +52,11 @@
     <header>
       <a class="brand" href="index.html"
         ><span class="logo">Q</span> Quiz Room</a
-      ><span class="tag">A LITTLE FRIENDLY COMPETITION</span>
+      >
+      <div class="row">
+        <span class="tag">A LITTLE FRIENDLY COMPETITION</span
+        ><button type="button" id="theme-toggle">Dark mode</button>
+      </div>
     </header>
     <main id="app"></main>
     <footer>
