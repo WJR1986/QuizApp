@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "title": "Quiz Room — General Knowledge & Internet Culture",
+  "source": "Original question wording prepared for this app. Review facts before hosting a live quiz.",
+  "questions": [
+    {
+      "id": "gk-1",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "How many continents are there on Earth?",
+      "answer": "7",
+      "options": ["5", "6", "7", "8"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-2",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "Which planet is the largest in our solar system?",
+      "answer": "Jupiter",
+      "options": ["Earth", "Jupiter", "Saturn", "Neptune"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gk-3",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "Which gas do plants mainly absorb from the air for photosynthesis?",
+      "answer": "Carbon dioxide",
+      "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-4",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "How many minutes are there in a full day?",
+      "answer": "1,440",
+      "options": ["960", "1,200", "1,440", "2,400"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-5",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "What is the capital city of Australia?",
+      "answer": "Canberra",
+      "options": ["Canberra", "Sydney", "Melbourne", "Perth"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "gk-6",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "Which is the only mammal capable of true flight?",
+      "answer": "Bat",
+      "options": ["Flying squirrel", "Sugar glider", "Bat", "Colugo"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-7",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "What is the hardest naturally occurring substance?",
+      "answer": "Diamond",
+      "options": ["Quartz", "Diamond", "Titanium", "Obsidian"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gk-8",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "How many strings does a standard violin have?",
+      "answer": "4",
+      "options": ["4", "5", "6", "7"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "gk-9",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "What does 'WWW' stand for in a web address?",
+      "answer": "World Wide Web",
+      "options": ["World Web Wide", "Wide World Web", "World Wide Web", "Web World Wide"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-10",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "Which ocean is the largest by area?",
+      "answer": "Pacific Ocean",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "gk-11",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "What is the official currency of Japan?",
+      "answer": "Yen",
+      "options": ["Won", "Yuan", "Yen", "Ringgit"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-12",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "How many bones are there in the average adult human body?",
+      "answer": "206",
+      "options": ["186", "206", "226", "246"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gk-13",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "How many sides does a heptagon have?",
+      "answer": "7",
+      "options": ["5", "6", "7", "8"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gk-14",
+      "round": "General knowledge",
+      "category": "General knowledge",
+      "question": "Which vitamin is mainly produced when skin is exposed to sunlight?",
+      "answer": "Vitamin D",
+      "options": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+      "correct": 3,
+      "scoring": []
+    },
+
+    {
+      "id": "net-1",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'POV' stand for in video captions?",
+      "answer": "Point of view",
+      "options": ["Point of view", "Post of value", "Playback over voice", "Public online video"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-2",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "Which app is famous for short videos and its 'For You' page?",
+      "answer": "TikTok",
+      "options": ["LinkedIn", "TikTok", "Pinterest", "Spotify"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-3",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'FYP' stand for on TikTok?",
+      "answer": "For You Page",
+      "options": ["Find Your People", "For You Page", "Follow Your Post", "Feed Your Profile"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-4",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "Who is the most-followed creator on TikTok?",
+      "answer": "Khaby Lame",
+      "options": ["Charli D'Amelio", "Khaby Lame", "MrBeast", "Bella Poarch"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-5",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'IRL' mean in online chat?",
+      "answer": "In real life",
+      "options": ["In real life", "I really like", "Instant replay loop", "In rotation live"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-6",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'FOMO' stand for?",
+      "answer": "Fear of missing out",
+      "options": ["Fear of missing out", "Feeling of mild outrage", "First opinion, most obvious", "Following only meme accounts"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-7",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "Which game popularised the slang word 'sus'?",
+      "answer": "Among Us",
+      "options": ["Fortnite", "Roblox", "Among Us", "Minecraft"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "net-8",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "In internet slang, what does 'ratio' mean?",
+      "answer": "A reply gets more likes than the post it replies to",
+      "options": [
+        "A reply gets more likes than the post it replies to",
+        "A post is shared exactly twice",
+        "A video is exactly 60 seconds long",
+        "A comment is pinned by the creator"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-9",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'DM' stand for on social media?",
+      "answer": "Direct message",
+      "options": ["Daily meme", "Direct message", "Digital mention", "Draft mode"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-10",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "Which platform is known for 'reels'?",
+      "answer": "Instagram",
+      "options": ["Reddit", "Discord", "Instagram", "Twitch"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "net-11",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does it mean when a post 'goes viral'?",
+      "answer": "It spreads very quickly to a huge audience",
+      "options": [
+        "It is deleted by moderators",
+        "It spreads very quickly to a huge audience",
+        "It is saved to a private folder",
+        "It is translated into every language"
+      ],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-12",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What does 'LOL' stand for?",
+      "answer": "Laugh out loud",
+      "options": ["Laugh out loud", "Lots of likes", "Live on location", "Look out loud"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-13",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "Which app is known for disappearing photo and video messages and 'streaks'?",
+      "answer": "Snapchat",
+      "options": ["Snapchat", "X", "YouTube", "Tumblr"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "net-14",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "In 2023, which social platform was rebranded from Twitter?",
+      "answer": "X",
+      "options": ["Threads", "Bluesky", "X", "Mastodon"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "net-15",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What is a 'filter' on social media apps?",
+      "answer": "A visual effect applied to photos or videos",
+      "options": [
+        "A tool that blocks all comments",
+        "A visual effect applied to photos or videos",
+        "A paid subscription tier",
+        "A private messaging group"
+      ],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "net-16",
+      "round": "Internet & TikTok culture",
+      "category": "Internet culture",
+      "question": "What is 'streaming'?",
+      "answer": "Watching or listening to media in real time over the internet",
+      "options": [
+        "Downloading a file to keep forever",
+        "Watching or listening to media in real time over the internet",
+        "Sending a voice note to a friend",
+        "Editing a video offline"
+      ],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "mus-1",
+      "round": "Music",
+      "category": "Music",
+      "question": "Which artist released the 2019 hit 'Blinding Lights'?",
+      "answer": "The Weeknd",
+      "options": ["Drake", "The Weeknd", "Post Malone", "Bruno Mars"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-2",
+      "round": "Music",
+      "category": "Music",
+      "question": "Which K-pop group released 'Dynamite' in 2020?",
+      "answer": "BTS",
+      "options": ["Blackpink", "BTS", "Stray Kids", "Twice"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-3",
+      "round": "Music",
+      "category": "Music",
+      "question": "Which artist released the album '1989'?",
+      "answer": "Taylor Swift",
+      "options": ["Adele", "Katy Perry", "Taylor Swift", "Rihanna"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "mus-4",
+      "round": "Music",
+      "category": "Music",
+      "question": "Who released the 2021 breakout single 'drivers license'?",
+      "answer": "Olivia Rodrigo",
+      "options": ["Billie Eilish", "Olivia Rodrigo", "Sabrina Carpenter", "Gracie Abrams"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-5",
+      "round": "Music",
+      "category": "Music",
+      "question": "Which artist is behind the song 'bad guy'?",
+      "answer": "Billie Eilish",
+      "options": ["Billie Eilish", "Dua Lipa", "Halsey", "Lorde"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "mus-6",
+      "round": "Music",
+      "category": "Music",
+      "question": "How many members were in One Direction?",
+      "answer": "5",
+      "options": ["4", "5", "6", "7"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-7",
+      "round": "Music",
+      "category": "Music",
+      "question": "Who is often called the 'Queen of Pop'?",
+      "answer": "Madonna",
+      "options": ["Beyoncé", "Madonna", "Lady Gaga", "Whitney Houston"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-8",
+      "round": "Music",
+      "category": "Music",
+      "question": "What does 'BPM' stand for in music?",
+      "answer": "Beats per minute",
+      "options": ["Bass per melody", "Beats per minute", "Background pop mix", "Bar pattern mode"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-9",
+      "round": "Music",
+      "category": "Music",
+      "question": "What does 'K-pop' stand for?",
+      "answer": "Korean pop",
+      "options": ["Korean pop", "Karaoke pop", "Keyboard pop", "Kid-friendly pop"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "mus-10",
+      "round": "Music",
+      "category": "Music",
+      "question": "What does 'feat.' mean in a song title?",
+      "answer": "A featured artist performs on the track",
+      "options": [
+        "The song is a remix",
+        "A featured artist performs on the track",
+        "The song is instrumental",
+        "The track is a live recording"
+      ],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "mus-11",
+      "round": "Music",
+      "category": "Music",
+      "question": "What is a 'collab' in music?",
+      "answer": "Two or more artists working on a track together",
+      "options": [
+        "A song with no vocals",
+        "A cover of an older song",
+        "Two or more artists working on a track together",
+        "A solo acoustic version"
+      ],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "mus-12",
+      "round": "Music",
+      "category": "Music",
+      "question": "Which instrument has 88 keys on a standard model?",
+      "answer": "Piano",
+      "options": ["Organ", "Accordion", "Piano", "Harpsichord"],
+      "correct": 2,
+      "scoring": []
+    },
+
+    {
+      "id": "tv-1",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which Netflix series is set in Hawkins and features the Upside Down?",
+      "answer": "Stranger Things",
+      "options": ["Stranger Things", "Dark", "The OA", "Black Mirror"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-2",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which 2022 series follows Wednesday Addams at Nevermore Academy?",
+      "answer": "Wednesday",
+      "options": ["Sabrina", "Wednesday", "Chilling Adventures", "Locke & Key"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-3",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "In 'Squid Game', which game is played first?",
+      "answer": "Red Light, Green Light",
+      "options": ["Tug of War", "Red Light, Green Light", "Marbles", "Glass Bridge"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-4",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which actor plays Spider-Man in the Marvel films from 2016 onwards?",
+      "answer": "Tom Holland",
+      "options": ["Tobey Maguire", "Andrew Garfield", "Tom Holland", "Jacob Batalon"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv-5",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "'Barbenheimer' refers to Barbie and which other 2023 film?",
+      "answer": "Oppenheimer",
+      "options": ["Oppenheimer", "Dunkirk", "Tenet", "Interstellar"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-6",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "What is the name of the fictional African nation in Marvel's Black Panther?",
+      "answer": "Wakanda",
+      "options": ["Zamunda", "Wakanda", "Genosha", "Latveria"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-7",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "What is the name of the coffee shop in Friends?",
+      "answer": "Central Perk",
+      "options": ["Central Perk", "The Grind", "Java Joe's", "Coffee Club"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-8",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which streaming service released 'The Mandalorian'?",
+      "answer": "Disney+",
+      "options": ["Netflix", "HBO Max", "Disney+", "Prime Video"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv-9",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "What is the highest-grossing film of all time?",
+      "answer": "Avatar",
+      "options": ["Titanic", "Avatar", "Avengers: Endgame", "Star Wars: The Force Awakens"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-10",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which franchise features the line 'May the Force be with you'?",
+      "answer": "Star Wars",
+      "options": ["Star Wars", "Star Trek", "Dune", "The Matrix"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-11",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "Which show is famous for the line 'Winter is coming'?",
+      "answer": "Game of Thrones",
+      "options": ["The Witcher", "Game of Thrones", "Vikings", "House of the Dragon"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-12",
+      "round": "Film & TV",
+      "category": "Film & TV",
+      "question": "What does 'binge-watching' mean?",
+      "answer": "Watching many episodes in one sitting",
+      "options": [
+        "Watching many episodes in one sitting",
+        "Watching a show out of order",
+        "Rewatching a single episode",
+        "Watching only trailers"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+
+    {
+      "id": "gam-1",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "Which battle royale game drops players from a battle bus?",
+      "answer": "Fortnite",
+      "options": ["Apex Legends", "Fortnite", "Warzone", "PUBG"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gam-2",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "What is the best-selling video game of all time?",
+      "answer": "Minecraft",
+      "options": ["Minecraft", "Tetris", "Grand Theft Auto V", "Wii Sports"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "gam-3",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "In Minecraft, how many wooden planks do you need to craft a crafting table?",
+      "answer": "4",
+      "options": ["2", "3", "4", "6"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gam-4",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "Which game features the character Master Chief?",
+      "answer": "Halo",
+      "options": ["Gears of War", "Halo", "Destiny", "Doom"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gam-5",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "What does 'NPC' stand for in gaming?",
+      "answer": "Non-player character",
+      "options": ["New player control", "Non-player character", "Network ping check", "Next phase challenge"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gam-6",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "In which game series would you find the character Link?",
+      "answer": "The Legend of Zelda",
+      "options": ["The Legend of Zelda", "Final Fantasy", "Dark Souls", "Elden Ring"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "gam-7",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "Which game popularised the modern battle royale genre on PC in 2017?",
+      "answer": "PlayerUnknown's Battlegrounds",
+      "options": ["Fortnite", "H1Z1", "PlayerUnknown's Battlegrounds", "Rust"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gam-8",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "Which Nintendo character says 'It's-a me!'?",
+      "answer": "Mario",
+      "options": ["Luigi", "Mario", "Wario", "Toad"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gam-9",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "How many players can be in a single Among Us lobby?",
+      "answer": "15",
+      "options": ["10", "12", "15", "20"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "gam-10",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "Which company develops Genshin Impact?",
+      "answer": "HoYoverse",
+      "options": ["HoYoverse", "Riot Games", "Supercell", "Epic Games"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "gam-11",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "In Roblox, what are user-made games called?",
+      "answer": "Experiences",
+      "options": ["Servers", "Experiences", "Channels", "Worlds"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "gam-12",
+      "round": "Gaming",
+      "category": "Gaming",
+      "question": "What is 'cross-play'?",
+      "answer": "Playing the same game together on different devices",
+      "options": [
+        "Playing two games at once",
+        "Playing without an internet connection",
+        "Playing the same game together on different devices",
+        "Playing with a controller instead of a keyboard"
+      ],
+      "correct": 2,
+      "scoring": []
+    }
+  ]
+}

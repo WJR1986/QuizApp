@@ -529,13 +529,9 @@ button.primary:hover {
   background: var(--soft);
   padding: 11px 13px;
 }
-.pack-del {
-  flex: 0 0 auto;
-  padding: 0 13px;
-  color: var(--muted);
-}
-.pack-del:hover {
-  color: var(--error);
-  border-color: var(--error);
-  background: var(--error-bg);
+.packs code {
+  background: var(--soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
 }

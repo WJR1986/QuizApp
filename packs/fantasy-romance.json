@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "title": "Quiz Room — Romantasy & BookTok Pack",
+  "source": "Original question wording prepared for this app. Contains spoilers. Facts based on the published books; review before hosting.",
+  "questions": [
+    {
+      "id": "acotar-1",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "What animal does Feyre kill in the woods at the very start of A Court of Thorns and Roses?",
+      "answer": "A wolf",
+      "options": ["A wolf", "A fox", "A bear", "A deer"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-2",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "What was the name of the faerie Feyre killed at the beginning of ACOTAR?",
+      "answer": "Andras",
+      "options": ["Andras", "Tamlin", "Lucien", "Rhysand"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-3",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "Which Court does Feyre spend most of the first ACOTAR book living in?",
+      "answer": "The Spring Court",
+      "options": ["The Spring Court", "The Night Court", "The Autumn Court", "The Summer Court"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-4",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "Who is the High Lord of the Night Court?",
+      "answer": "Rhysand",
+      "options": ["Rhysand", "Tamlin", "Kallias", "Beron"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-5",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "What is the name of the evil High Queen who rules Prythian for nearly 50 years?",
+      "answer": "Amarantha",
+      "options": ["Amarantha", "Maeve", "Ianthe", "Hybern"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-6",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "Which sister is the protagonist of A Court of Silver Flames?",
+      "answer": "Nesta Archeron",
+      "options": ["Nesta Archeron", "Feyre Archeron", "Elain Archeron", "Mor"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-7",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "What does Rhysand tattoo on Feyre's arm after her trials Under the Mountain?",
+      "answer": "An eye",
+      "options": ["An eye", "A star", "A mountain", "A rose"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "acotar-8",
+      "round": "ACOTAR",
+      "category": "ACOTAR",
+      "question": "Who is the fae artist Feyre meets while walking through the rainbow in Velaris?",
+      "answer": "Ressina",
+      "options": ["Ressina", "Polina", "Linnea", "Hypaxia"],
+      "correct": 0,
+      "scoring": []
+    },
+
+    {
+      "id": "fw-1",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "Who is the author of Fourth Wing?",
+      "answer": "Rebecca Yarros",
+      "options": ["Rebecca Yarros", "Sarah J. Maas", "Leigh Bardugo", "Carissa Broadbent"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-2",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "At which brutal military academy is Fourth Wing primarily set?",
+      "answer": "Basgiath War College",
+      "options": ["Basgiath War College", "Adarlan Military Institute", "Blackcliff Academy", "The Torre Cesme"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-3",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "What is the name of the deadly narrow bridge cadets must cross on Day One?",
+      "answer": "The Parapet",
+      "options": ["The Parapet", "The Span", "The Riftwalk", "The Gauntlet"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-4",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "What is the name of Violet Sorrengail's primary bonded dragon?",
+      "answer": "Tairn",
+      "options": ["Tairn", "Sgaeyl", "Andarna", "Codagh"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-5",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "What makes Violet's dragon bond extraordinary?",
+      "answer": "She is dual-bonded to two dragons",
+      "options": [
+        "She is dual-bonded to two dragons",
+        "She rides without a saddle",
+        "She can bond with any dragon temporarily",
+        "She is the first rider to bond with a golden dragon"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-6",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "What signet power does Violet ultimately manifest?",
+      "answer": "Lightning",
+      "options": ["Lightning", "Shadow-wielding", "Telepathy", "Invisibility"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-7",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "Which dragon is bonded to Xaden Riorson?",
+      "answer": "Sgaeyl",
+      "options": ["Sgaeyl", "Tairn", "Andarna", "Codagh"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-8",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "Who are the 'Marked Ones' in the Empyrean world?",
+      "answer": "Children of rebels, identifiable by rebellion relic tattoos",
+      "options": [
+        "Children of rebels, identifiable by rebellion relic tattoos",
+        "Elite dragon healers marked by golden eyes",
+        "Cadets who survived the Parapet on their second attempt",
+        "Riders who have bonded more than one dragon"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-9",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "What type of dragon is Sgaeyl, Xaden's dragon?",
+      "answer": "Daggertail",
+      "options": ["Daggertail", "Feathertail", "Swordtail", "Scorpiontail"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "fw-10",
+      "round": "Fourth Wing",
+      "category": "Fourth Wing",
+      "question": "Before being forced into the Riders Quadrant, which path was Violet originally meant to pursue?",
+      "answer": "The Scribe Quadrant",
+      "options": ["The Scribe Quadrant", "The Healer Quadrant", "The Infantry Quadrant", "The Flyer Quadrant"],
+      "correct": 0,
+      "scoring": []
+    },
+
+    {
+      "id": "sjm-1",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "In Throne of Glass, under what name is Aelin first known to readers at the start of the series?",
+      "answer": "Celaena Sardothien",
+      "options": ["Celaena Sardothien", "Aelin Ashryver", "Lillian Gordaina", "Ansel of Briarcliff"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-2",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "In Crescent City, what is Bryce Quinlan?",
+      "answer": "Half-human, half-fae",
+      "options": ["Half-human, half-fae", "Full fae", "Half-wolf shifter", "Half-angel"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-3",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "What is the formal name of Crescent City (Lunathion)?",
+      "answer": "Lunathion",
+      "options": ["Lunathion", "Prythian", "Velaris", "Rifthold"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-4",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "In The Serpent and the Wings of Night, what is the name of the legendary tournament Oraya enters?",
+      "answer": "The Kejari",
+      "options": ["The Kejari", "The Gauntlet", "The Threshing", "The Trials"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-5",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "What trope is summed up by the phrase 'There Was Only One Bed'?",
+      "answer": "Characters forced into close proximity by a sleeping arrangement",
+      "options": [
+        "Characters forced into close proximity by a sleeping arrangement",
+        "A love triangle resolved in the final chapter",
+        "Enemies forced to work together on a quest",
+        "A fake relationship that becomes real"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-6",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "What does 'DNF' mean in BookTok slang?",
+      "answer": "Did Not Finish (abandoning a book before the end)",
+      "options": [
+        "Did Not Finish (abandoning a book before the end)",
+        "Dragon Night Flight",
+        "Double Narrative Format",
+        "Dark New Fantasy"
+      ],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-7",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "Which 2023 film and book phenomenon was paired with Barbie as 'Barbenheimer'?",
+      "answer": "Oppenheimer",
+      "options": ["Oppenheimer", "Dunkirk", "Tenet", "Interstellar"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "sjm-8",
+      "round": "Sarah J. Maas & beyond",
+      "category": "SJM & BookTok",
+      "question": "What does 'spice' refer to in romantasy book reviews?",
+      "answer": "The level of explicit sexual content",
+      "options": [
+        "The level of explicit sexual content",
+        "The amount of world-building",
+        "The number of plot twists",
+        "The quality of the magic system"
+      ],
+      "correct": 0,
+      "scoring": []
+    }
+  ]
+}
