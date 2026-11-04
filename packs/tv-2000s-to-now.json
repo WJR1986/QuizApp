@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "title": "Quiz Room — TV from the 2000s to Now",
+  "source": "Original question wording prepared for this app. Facts based on widely reported broadcast data; review before hosting a live quiz.",
+  "questions": [
+    {
+      "id": "tv00-drama-1",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Which actor played Michael Scott in the US version of The Office?",
+      "answer": "Steve Carell",
+      "options": ["Ricky Gervais", "Steve Carell", "Rainn Wilson", "John Krasinski"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-2",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Which fictional airline's crashed flight 815 opens the series Lost?",
+      "answer": "Oceanic Airlines",
+      "options": ["Oceanic Airlines", "Pacific Airlines", "Atlantic Airways", "Pan Am"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-3",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Who played Tony Soprano in The Sopranos?",
+      "answer": "James Gandolfini",
+      "options": ["Robert De Niro", "Joe Pesci", "James Gandolfini", "Michael Imperioli"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-4",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "In Breaking Bad, what subject does Walter White teach at a high school?",
+      "answer": "Chemistry",
+      "options": ["Physics", "Chemistry", "Biology", "Mathematics"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-5",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Which sitcom's 2004 finale drew more than 50 million US viewers?",
+      "answer": "Friends",
+      "options": ["Frasier", "Sex and the City", "Will & Grace", "Friends"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-6",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "What role does Meredith Grey begin Grey's Anatomy in?",
+      "answer": "Surgical intern",
+      "options": ["Surgical intern", "Head nurse", "Anesthesiologist", "Chief resident"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-7",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Which Kiefer Sutherland series covers a single day across each season?",
+      "answer": "24",
+      "options": ["24", "Prison Break", "Homeland", "The Unit"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-drama-8",
+      "round": "2000s drama & comedy",
+      "category": "2000s TV",
+      "question": "Which US sitcom starred Zach Braff as J.D.?",
+      "answer": "Scrubs",
+      "options": ["Community", "Scrubs", "Cougar Town", "Better Off Ted"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "tv00-reality-1",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "In which year did Big Brother UK first air on Channel 4?",
+      "answer": "2000",
+      "options": ["1998", "1999", "2000", "2001"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-2",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "In which year did Strictly Come Dancing first hit BBC One?",
+      "answer": "2004",
+      "options": ["2002", "2004", "2006", "2008"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-3",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "Which ITV talent show launched in 2004 and later produced One Direction?",
+      "answer": "The X Factor",
+      "options": ["Pop Idol", "The X Factor", "Britain's Got Talent", "The Voice UK"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-4",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "Which Peter Kay sitcom is set in a Bolton social club called The Phoenix?",
+      "answer": "Phoenix Nights",
+      "options": ["Max and Paddy", "Phoenix Nights", "Car Share", "That Peter Kay Thing"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-5",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "What is the name of the school the boys attend in The Inbetweeners?",
+      "answer": "Rudge Park Comprehensive",
+      "options": ["Rudge Park Comprehensive", "Greenford High", "Hollyoaks High", "King's Academy"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-6",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "Which ITV reality show launched in 2002 and sends celebrities into the Australian jungle?",
+      "answer": "I'm a Celebrity... Get Me Out of Here!",
+      "options": ["I'm a Celebrity... Get Me Out of Here!", "Survivor UK", "The Island", "Celebrity Island"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-7",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "Which Welsh seaside town is Nessa from in Gavin & Stacey?",
+      "answer": "Barry",
+      "options": ["Barry", "Porthcawl", "Swansea", "Tenby"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv00-reality-8",
+      "round": "2000s reality & UK telly",
+      "category": "2000s TV",
+      "question": "Which 2005 revival cast Christopher Eccleston as the Ninth Doctor?",
+      "answer": "Doctor Who",
+      "options": ["Torchwood", "Doctor Who", "The Sarah Jane Adventures", "Primeval"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "tv10-prestige-1",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which author's novels inspired Game of Thrones?",
+      "answer": "George R. R. Martin",
+      "options": ["J. R. R. Tolkien", "Philip Pullman", "George R. R. Martin", "Robert Jordan"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-2",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "What alias does Walter White use as a drug kingpin in Breaking Bad?",
+      "answer": "Heisenberg",
+      "options": ["Heisenberg", "Schrute", "Capone", "Vito"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-3",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which 2016 Netflix series is set in the fictional town of Hawkins, Indiana?",
+      "answer": "Stranger Things",
+      "options": ["Stranger Things", "Dark", "The OA", "Black Mirror"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-4",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Who played the Queen in the first two seasons of The Crown?",
+      "answer": "Claire Foy",
+      "options": ["Olivia Colman", "Claire Foy", "Imelda Staunton", "Helena Bonham Carter"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-5",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which 2013 Netflix series is set in a women's prison?",
+      "answer": "Orange Is the New Black",
+      "options": ["Wentworth", "Orange Is the New Black", "Oz", "Bad Girls"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-6",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which BBC series stars Benedict Cumberbatch as a modern-day Holmes?",
+      "answer": "Sherlock",
+      "options": ["Elementary", "Sherlock", "Luther", "Broadchurch"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-7",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which family leads the gang in Peaky Blinders?",
+      "answer": "The Shelbys",
+      "options": ["The Shelbys", "The Kennedys", "The Murphys", "The Byrnes"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-prestige-8",
+      "round": "2010s prestige TV",
+      "category": "2010s TV",
+      "question": "Which media conglomerate does the Roy family control in Succession?",
+      "answer": "Waystar Royco",
+      "options": ["Pierce Global", "Waystar Royco", "GoJo", "Vault Media"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "tv10-comedy-1",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which US sitcom is set in Brooklyn's 99th precinct?",
+      "answer": "Brooklyn Nine-Nine",
+      "options": ["Parks and Recreation", "Brooklyn Nine-Nine", "The Good Place", "Community"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-2",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Who created and stars in Fleabag?",
+      "answer": "Phoebe Waller-Bridge",
+      "options": ["Phoebe Waller-Bridge", "Michaela Coel", "Sharon Horgan", "Issa Rae"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-3",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which Canadian sitcom follows the Rose family after they lose their fortune?",
+      "answer": "Schitt's Creek",
+      "options": ["Kim's Convenience", "Schitt's Creek", "Letterkenny", "Workin' Moms"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-4",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "What is Rick's surname in Rick and Morty?",
+      "answer": "Sanchez",
+      "options": ["Smith", "Sanchez", "Harmon", "Roiland"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-5",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which 2018 BBC thriller stars Jodie Comer as the assassin Villanelle?",
+      "answer": "Killing Eve",
+      "options": ["Killing Eve", "Bodyguard", "Line of Duty", "The Night Manager"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-6",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which 2019 HBO drama is based on the 1986 nuclear disaster?",
+      "answer": "Chernobyl",
+      "options": ["Chernobyl", "The Terror", "Generation Kill", "The Night Of"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-7",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which 2019 Amazon series is a superhero satire starring Karl Urban?",
+      "answer": "The Boys",
+      "options": ["Invincible", "The Boys", "Watchmen", "The Umbrella Academy"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv10-comedy-8",
+      "round": "2010s comedy & streaming",
+      "category": "2010s TV",
+      "question": "Which Lisa McGee comedy follows teenagers in Derry in the 1990s?",
+      "answer": "Derry Girls",
+      "options": ["Derry Girls", "Normal People", "The Young Offenders", "Hardy Bucks"],
+      "correct": 0,
+      "scoring": []
+    },
+
+    {
+      "id": "tv20-hits-1",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2020 Netflix chess drama stars Anya Taylor-Joy?",
+      "answer": "The Queen's Gambit",
+      "options": ["The Queen's Gambit", "Pawn Sacrifice", "Checkmate", "The Fischer Story"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-2",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2021 Korean Netflix series is built around deadly children's games?",
+      "answer": "Squid Game",
+      "options": ["Alice in Borderland", "Kingdom", "Squid Game", "Sweet Home"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-3",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which sport does Ted Lasso coach in the Apple TV+ series?",
+      "answer": "Football (soccer)",
+      "options": ["American football", "Football (soccer)", "Rugby", "Baseball"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-4",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2023 HBO series is adapted from a video game and stars Pedro Pascal?",
+      "answer": "The Last of Us",
+      "options": ["Fallout", "Halo", "The Last of Us", "The Witcher"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-5",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "In Severance, which company employs the characters whose memories are split?",
+      "answer": "Lumon Industries",
+      "options": ["Lumon Industries", "E-Corp", "Wayne Enterprises", "Vault-Tec"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-6",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2024 Netflix drama is based on Richard Gadd's own experience of being stalked?",
+      "answer": "Baby Reindeer",
+      "options": ["You", "The Watcher", "Baby Reindeer", "The End of the F***ing World"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-7",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2024 FX series is set in feudal Japan and stars Hiroyuki Sanada?",
+      "answer": "Shōgun",
+      "options": ["Shōgun", "Tokyo Vice", "Pachinko", "Blue Eye Samurai"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv20-hits-8",
+      "round": "2020s hits",
+      "category": "2020s TV",
+      "question": "Which 2022 series follows Wednesday Addams at Nevermore Academy?",
+      "answer": "Wednesday",
+      "options": ["Chilling Adventures of Sabrina", "Locke & Key", "The Order", "Wednesday"],
+      "correct": 3,
+      "scoring": []
+    },
+
+    {
+      "id": "tv-reality-1",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which baking competition began on BBC Two in 2010 and moved to Channel 4 in 2017?",
+      "answer": "The Great British Bake Off",
+      "options": ["MasterChef", "The Great British Bake Off", "Bake Off: The Professionals", "Junior Bake Off"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-2",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which reality show was revived by ITV2 in 2015 and sends singletons to a villa?",
+      "answer": "Love Island",
+      "options": ["Love Island", "Temptation Island", "Too Hot to Handle", "Ex on the Beach"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-3",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which 2022 BBC show hosted by Claudia Winkleman pits 'Traitors' against 'Faithfuls' in a castle?",
+      "answer": "The Traitors",
+      "options": ["The Mole", "Hunted", "The Traitors", "The Circle"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-4",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which E! reality show following a famous LA family ran from 2007 to 2021?",
+      "answer": "Keeping Up with the Kardashians",
+      "options": ["The Hills", "Real Housewives of Beverly Hills", "Keeping Up with the Kardashians", "The Osbournes"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-5",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which 2019 Netflix reality series follows real estate agents in Los Angeles?",
+      "answer": "Selling Sunset",
+      "options": ["Selling Sunset", "Selling Tampa", "Million Dollar Listing", "Owning Manhattan"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-6",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which drag competition hosted by RuPaul first aired in 2009?",
+      "answer": "RuPaul's Drag Race",
+      "options": ["Legendary", "RuPaul's Drag Race", "Drag U", "Pose"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-7",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which E4 reality show launched in 2011 and follows wealthy twenty-somethings in west London?",
+      "answer": "Made in Chelsea",
+      "options": ["The Only Way Is Essex", "Geordie Shore", "Made in Chelsea", "The Hills"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "tv-reality-8",
+      "round": "Reality & competition",
+      "category": "Reality TV",
+      "question": "Which 2019 BBC sitcom features the ghosts of former residents haunting a crumbling country house?",
+      "answer": "Ghosts",
+      "options": ["Being Human", "Ghosts", "The Haunting of Hill House", "Truth Seekers"],
+      "correct": 1,
+      "scoring": []
+    }
+  ]
+}

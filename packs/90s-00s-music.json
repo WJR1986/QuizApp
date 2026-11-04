@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "title": "Quiz Room — 90s & 00s Music",
+  "source": "Original question wording prepared for this app. Facts based on widely reported release data; review before hosting a live quiz.",
+  "questions": [
+    {
+      "id": "n90-pop-1",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which artist released '…Baby One More Time' in 1998?",
+      "answer": "Britney Spears",
+      "options": ["Christina Aguilera", "Britney Spears", "Mandy Moore", "Jessica Simpson"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-2",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which girl group released 'Wannabe' in 1996?",
+      "answer": "Spice Girls",
+      "options": ["All Saints", "Sugababes", "Spice Girls", "Girls Aloud"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-3",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Who sang 'I Will Always Love You' for The Bodyguard soundtrack?",
+      "answer": "Whitney Houston",
+      "options": ["Whitney Houston", "Mariah Carey", "Celine Dion", "Toni Braxton"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-4",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which Madonna single from 1990 shares its name with a dance style?",
+      "answer": "Vogue",
+      "options": ["Like a Prayer", "Express Yourself", "Justify My Love", "Vogue"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-5",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which duo had a worldwide 1990s hit with 'Macarena'?",
+      "answer": "Los del Río",
+      "options": ["Roxette", "Ace of Base", "Milli Vanilli", "Los del Río"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-6",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Who had a 1990 hit with 'Nothing Compares 2 U'?",
+      "answer": "Sinéad O'Connor",
+      "options": ["Enya", "Sinéad O'Connor", "Annie Lennox", "Dolores O'Riordan"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-7",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which Alanis Morissette song lists situations that aren't actually ironic?",
+      "answer": "Ironic",
+      "options": ["Ironic", "You Oughta Know", "Hand in My Pocket", "Head over Feet"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n90-pop-8",
+      "round": "90s pop",
+      "category": "90s pop",
+      "question": "Which Australian singer had a 1997 hit with 'Torn'?",
+      "answer": "Natalie Imbruglia",
+      "options": ["Kylie Minogue", "Tina Arena", "Natalie Imbruglia", "Delta Goodrem"],
+      "correct": 2,
+      "scoring": []
+    },
+
+    {
+      "id": "n90-rock-1",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which band released 'Smells Like Teen Spirit' in 1991?",
+      "answer": "Nirvana",
+      "options": ["Pearl Jam", "Soundgarden", "Nirvana", "Alice in Chains"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-2",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which Britpop band released 'Wonderwall' in 1995?",
+      "answer": "Oasis",
+      "options": ["Blur", "Oasis", "Pulp", "Suede"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-3",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which American band released 'Losing My Religion' in 1991?",
+      "answer": "R.E.M.",
+      "options": ["U2", "The Cranberries", "Radiohead", "R.E.M."],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-4",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which band released their 1992 debut single 'Creep'?",
+      "answer": "Radiohead",
+      "options": ["Coldplay", "Radiohead", "Muse", "Travis"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-5",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which Irish band released 'Zombie' in 1994?",
+      "answer": "The Cranberries",
+      "options": ["U2", "The Corrs", "The Cranberries", "Boyzone"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-6",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which band is behind the short, shouty 1997 hit 'Song 2'?",
+      "answer": "Blur",
+      "options": ["Oasis", "Pulp", "Blur", "Supergrass"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-7",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which punk band released 'Basket Case' in 1994?",
+      "answer": "Green Day",
+      "options": ["The Offspring", "Blink-182", "Rancid", "Green Day"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n90-rock-8",
+      "round": "90s rock & alternative",
+      "category": "90s rock",
+      "question": "Which metal band released 'Enter Sandman' in 1991?",
+      "answer": "Metallica",
+      "options": ["Megadeth", "Metallica", "Slayer", "Pantera"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "n00-pop-1",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which artist released 'Crazy in Love' featuring Jay-Z in 2003?",
+      "answer": "Beyoncé",
+      "options": ["Beyoncé", "Ciara", "Ashanti", "Alicia Keys"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-2",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Who released the 2004 single 'Toxic'?",
+      "answer": "Britney Spears",
+      "options": ["Christina Aguilera", "Jessica Simpson", "Pink", "Britney Spears"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-3",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which American Idol winner had a hit with 'Since U Been Gone'?",
+      "answer": "Kelly Clarkson",
+      "options": ["Carrie Underwood", "Kelly Clarkson", "Fantasia", "Jordin Sparks"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-4",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which artist released 'Umbrella' featuring Jay-Z in 2007?",
+      "answer": "Rihanna",
+      "options": ["Rihanna", "Beyoncé", "Chris Brown", "Ne-Yo"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-5",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which artist released 'Hips Don't Lie' with Wyclef Jean in 2006?",
+      "answer": "Shakira",
+      "options": ["Jennifer Lopez", "Enrique Iglesias", "Shakira", "Ricky Martin"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-6",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which duo released the 2003 hit 'Hey Ya!'?",
+      "answer": "OutKast",
+      "options": ["Black Eyed Peas", "OutKast", "Gnarls Barkley", "The Neptunes"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-7",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Who released 'Bad Romance' in 2009?",
+      "answer": "Lady Gaga",
+      "options": ["Katy Perry", "Kesha", "Gwen Stefani", "Lady Gaga"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-pop-8",
+      "round": "00s pop",
+      "category": "00s pop",
+      "question": "Which boy band released 'Bye Bye Bye' in 2000?",
+      "answer": "*NSYNC",
+      "options": ["Backstreet Boys", "*NSYNC", "98 Degrees", "Westlife"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "n00-hiphop-1",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Which rapper released 'Lose Yourself' from the film 8 Mile?",
+      "answer": "Eminem",
+      "options": ["Dr. Dre", "50 Cent", "Eminem", "Jay-Z"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-2",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Who released 'In Da Club' in 2003?",
+      "answer": "50 Cent",
+      "options": ["50 Cent", "The Game", "Lloyd Banks", "Ja Rule"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-3",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Which rapper released 'Hot in Herre' in 2002?",
+      "answer": "Nelly",
+      "options": ["Ludacris", "Chingy", "Ja Rule", "Nelly"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-4",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Which rapper released 'Gold Digger' featuring Jamie Foxx?",
+      "answer": "Kanye West",
+      "options": ["Jay-Z", "Lupe Fiasco", "Kanye West", "Common"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-5",
+      "round": "00s hip-hop & R&B",
+      "category": "00s R&B",
+      "question": "Who released 'Yeah!' with Lil Jon and Ludacris in 2004?",
+      "answer": "Usher",
+      "options": ["Usher", "Chris Brown", "Omarion", "Mario"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-6",
+      "round": "00s hip-hop & R&B",
+      "category": "00s R&B",
+      "question": "Which girl group released 'Bootylicious' in 2001?",
+      "answer": "Destiny's Child",
+      "options": ["TLC", "Destiny's Child", "3LW", "Blaque"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-7",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Which duo released the 2006 hit 'Crazy'?",
+      "answer": "Gnarls Barkley",
+      "options": ["OutKast", "The White Stripes", "The Black Keys", "Gnarls Barkley"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-hiphop-8",
+      "round": "00s hip-hop & R&B",
+      "category": "00s hip-hop",
+      "question": "Who released 'Dilemma' featuring Kelly Rowland in 2002?",
+      "answer": "Nelly",
+      "options": ["Ja Rule", "Nelly", "Ludacris", "Bow Wow"],
+      "correct": 1,
+      "scoring": []
+    },
+
+    {
+      "id": "n00-onehit-1",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which British group is behind the 1997 chant-along 'Tubthumping'?",
+      "answer": "Chumbawamba",
+      "options": ["Chumbawamba", "The Proclaimers", "Baha Men", "Aqua"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-2",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which Danish-Norwegian group had a 1997 hit with 'Barbie Girl'?",
+      "answer": "Aqua",
+      "options": ["Vengaboys", "S Club 7", "Steps", "Aqua"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-3",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which Italian trio had a 1999 hit with 'Blue (Da Ba Dee)'?",
+      "answer": "Eiffel 65",
+      "options": ["Daft Punk", "Eiffel 65", "Sash!", "Alice Deejay"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-4",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which group released 'Who Let the Dogs Out' in 2000?",
+      "answer": "Baha Men",
+      "options": ["Baha Men", "Chumbawamba", "Los del Río", "Vengaboys"],
+      "correct": 0,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-5",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Who had a 1990 hit with 'Ice Ice Baby'?",
+      "answer": "Vanilla Ice",
+      "options": ["MC Hammer", "Sir Mix-a-Lot", "Tone Lōc", "Vanilla Ice"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-6",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which band released 'Butterfly' in 2000?",
+      "answer": "Crazy Town",
+      "options": ["Limp Bizkit", "Papa Roach", "Crazy Town", "Staind"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-7",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which band released 'Teenage Dirtbag' in 2000?",
+      "answer": "Wheatus",
+      "options": ["Bowling for Soup", "Lit", "SR-71", "Wheatus"],
+      "correct": 3,
+      "scoring": []
+    },
+    {
+      "id": "n00-onehit-8",
+      "round": "One-hit wonders",
+      "category": "One-hit wonders",
+      "question": "Which band released the 2003 hit 'Stacy's Mom'?",
+      "answer": "Fountains of Wayne",
+      "options": ["Fountains of Wayne", "The Click Five", "Bowling for Soup", "Busted"],
+      "correct": 0,
+      "scoring": []
+    },
+
+    {
+      "id": "n90-album-1",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which Nirvana album was released in 1991?",
+      "answer": "Nevermind",
+      "options": ["Bleach", "Nevermind", "In Utero", "Incesticide"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-album-2",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which Lauryn Hill album won the 1999 Grammy for Album of the Year?",
+      "answer": "The Miseducation of Lauryn Hill",
+      "options": ["The Score", "The Miseducation of Lauryn Hill", "Mama's Gun", "Baduizm"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-album-3",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which 1997 Radiohead album includes 'Karma Police'?",
+      "answer": "OK Computer",
+      "options": ["The Bends", "Kid A", "OK Computer", "Amnesiac"],
+      "correct": 2,
+      "scoring": []
+    },
+    {
+      "id": "n90-album-4",
+      "round": "Albums & facts",
+      "category": "Singles",
+      "question": "Which 1997 Elton John single became one of the best-selling singles of all time?",
+      "answer": "Candle in the Wind 1997",
+      "options": ["Something About the Way You Look Tonight", "Candle in the Wind 1997", "Sacrifice", "Circle of Life"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n90-album-5",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which 1995 Oasis album includes 'Wonderwall' and 'Don't Look Back in Anger'?",
+      "answer": "(What's the Story) Morning Glory?",
+      "options": ["Definitely Maybe", "(What's the Story) Morning Glory?", "Be Here Now", "Standing on the Shoulder of Giants"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-album-6",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which 2004 Usher album includes 'Yeah!' and 'Burn'?",
+      "answer": "Confessions",
+      "options": ["8701", "Confessions", "Here I Stand", "Raymond v. Raymond"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-album-7",
+      "round": "Albums & facts",
+      "category": "Albums",
+      "question": "Which Amy Winehouse album features the hit 'Rehab'?",
+      "answer": "Back to Black",
+      "options": ["Frank", "Back to Black", "Lioness: Hidden Treasures", "At the BBC"],
+      "correct": 1,
+      "scoring": []
+    },
+    {
+      "id": "n00-album-8",
+      "round": "Albums & facts",
+      "category": "Singles",
+      "question": "In which year did Britney Spears release 'Oops!... I Did It Again'?",
+      "answer": "2000",
+      "options": ["1998", "1999", "2000", "2001"],
+      "correct": 2,
+      "scoring": []
+    }
+  ]
+}
