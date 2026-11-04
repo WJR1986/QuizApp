@@ -36,7 +36,8 @@ let bank = STARTER,
   teamText = "Team 1\nTeam 2",
   notice = "",
   packs = [],
-  currentPackId = null;
+  currentPackId = null,
+  setupStep = "mode"; // "mode" | "pack" | "configure"
 
 /* ---------- validation ---------- */
 function validate(data) {
@@ -103,7 +104,6 @@ async function loadBundledPacks() {
       "No packs/manifest.json found — using the starter pack only. Add packs/next to index.html and list its files.";
     return [];
   }
-
   const files = Array.isArray(manifest)
     ? manifest
     : Array.isArray(manifest?.packs)
@@ -122,23 +122,17 @@ async function loadBundledPacks() {
       failed.push(`${file} — ${err.message}`);
     }
   }
-  if (failed.length)
-    notice =
-      (loaded.length ? `${loaded.length} pack(s) loaded. ` : "") +
-      "Skipped: " +
-      failed.join(" · ");
-  else if (loaded.length)
-    notice = `${loaded.length} pack${loaded.length === 1 ? "" : "s"} loaded from packs/.`;
-  else notice = "";
+  notice = failed.length ? "Skipped: " + failed.join(" · ") : "";
   return loaded;
 }
 
 /* ---------- pack selection ---------- */
 function selectPack(id, opts = {}) {
   const found = id ? packs.find((p) => p.id === id) : null;
-  currentPackId = found ? found.id : null;
+  const newId = found ? found.id : null;
+  if (currentPackId !== newId) round = "all";
+  currentPackId = newId;
   bank = found || STARTER;
-  round = "all";
   try {
     if (currentPackId) localStorage.setItem(LAST_PACK_KEY, currentPackId);
     else localStorage.removeItem(LAST_PACK_KEY);
@@ -146,48 +140,194 @@ function selectPack(id, opts = {}) {
   if (!opts.silent) setup();
 }
 
-function packListHTML() {
-  const rows = [
-    `<div class="pack ${currentPackId === null ? "selected" : ""}">
-      <button class="pack-pick" data-pack="" aria-pressed="${currentPackId === null}">
-        <strong>${esc(STARTER.title)}</strong>
-        <small>${STARTER.questions.length} questions · built in</small>
-      </button>
-    </div>`,
-  ];
-  for (const p of packs) {
-    const sel = p.id === currentPackId,
-      mc = p.questions.filter((q) => q.options.length === 4).length;
-    rows.push(
-      `<div class="pack ${sel ? "selected" : ""}">
-        <button class="pack-pick" data-pack="${esc(p.id)}" aria-pressed="${sel}">
-          <strong>${esc(p.title || p.fileName || "Pack")}</strong>
-          <small>${p.questions.length} questions · ${mc} multiple choice</small>
-        </button>
-      </div>`,
-    );
-  }
-  return rows.join("");
-}
-
-/* ---------- setup screen ---------- */
+/* ---------- setup router ---------- */
 function setup() {
   game = null;
-  const count = eligible().length,
-    currentTitle = bank.title || bank.fileName || "Imported pack";
-  $("#app").innerHTML =
-    `<span class="eyebrow">WELCOME TO QUIZ ROOM</span><h1>Good questions.<br>Great company.</h1><p class="lead">A quiet challenge for one, or a lively quiz for the whole office. You bring the teams. We’ll bring the questions.</p><div class="layout"><section class="card"><h2>How are we playing?</h2><div class="row"><button id="solo" class="mode ${mode === "solo" ? "selected" : ""}" aria-pressed="${mode === "solo"}">Play solo<small>Multiple choice · instant feedback</small></button><button id="host" class="mode ${mode === "host" ? "selected" : ""}" aria-pressed="${mode === "host"}">Host the room<small>Read aloud · keep team scores</small></button></div>${mode === "host" ? `<label for="format">Question style</label><select id="format"><option value="mc" ${format === "mc" ? "selected" : ""}>Multiple choice</option><option value="open" ${format === "open" ? "selected" : ""}>Open answer — no options shown</option></select>` : ""}<div class="grid"><div><label for="round">Round</label><select id="round"><option value="all">Mix all rounds</option>${[...new Set(bank.questions.map((q) => q.round))].map((r) => `<option ${round === r ? "selected" : ""} value="${esc(r)}">${esc(r)}</option>`).join("")}</select></div><div><label for="amount">Questions</label><select id="amount">${[5, 10, 15, 20, 30, 50].map((n) => `<option ${n === amount ? "selected" : ""}>${n}</option>`).join("")}</select></div></div><label for="order">Question order</label><select id="order"><option value="random" ${random ? "selected" : ""}>Shuffle questions</option><option value="book" ${!random ? "selected" : ""}>Keep pack order</option></select>${mode === "host" ? `<label for="teams">Teams (one per line, up to 12)</label><textarea id="teams" rows="3" maxlength="600">${esc(teamText)}</textarea><p class="note">Read the questions aloud. Colleagues answer aloud or on paper; only the host needs this screen.</p>` : ""}<p class="note">${count} eligible questions · This game will use ${Math.min(amount, count)}.${mode === "solo" || format === "mc" ? " Only questions with prepared choices are included." : ""}</p><button id="start" class="primary full" ${!count ? "disabled" : ""}>${mode === "solo" ? "Let’s play" : "Start hosting"} →</button></section><aside><section class="card accent"><span class="eyebrow">YOUR QUESTION SHELF</span><h2 style="margin-top:15px">${esc(currentTitle)}</h2><p>${bank.questions.length.toLocaleString()} questions<br>${bank.questions.filter((q) => q.options.length === 4).length} with multiple choice</p><div class="packs">${packListHTML()}</div><div class="row" style="margin-top:12px"><button id="reload-packs">↻ Reload packs</button></div><p class="note">Packs come from the <code>packs/</code> folder in this site. To add one, drop its <code>.json</code> there and list the filename in <code>packs/manifest.json</code>.</p><p class="note" id="notice" role="status">${esc(notice)}</p></section><section class="card" style="margin-top:20px"><h3>A room, not a login.</h3><p class="note">No accounts, subscriptions or installation. The host runs the quiz and keeps team scores.</p><p class="note">Imported answers are preserved as printed, including potentially dated or inaccurate facts. Review before hosting.</p></section></aside></div>`;
+  if (setupStep === "mode") renderSetupMode();
+  else if (setupStep === "pack") renderSetupPack();
+  else renderSetupConfigure();
+}
 
+function progressHTML(active) {
+  return `<div class="wizard-progress" aria-hidden="true">${[0, 1, 2]
+    .map(
+      (i) =>
+        `<span class="dot ${i < active ? "done" : i === active ? "active" : ""}"></span>`,
+    )
+    .join("")}</div>`;
+}
+
+/* ---------- step 1: mode ---------- */
+function renderSetupMode() {
+  const packCount = packs.length;
+  $("#app").innerHTML = `
+    <div class="wizard">
+      ${progressHTML(0)}
+      <span class="eyebrow">STEP 1 OF 3 · WELCOME TO QUIZ ROOM</span>
+      <h1>Good questions.<br>Great company.</h1>
+      <p class="lead">First, how would you like to play?</p>
+      <section class="card">
+        <h2>Choose a mode</h2>
+        <div class="row modes">
+          <button id="solo" class="mode ${mode === "solo" ? "selected" : ""}" aria-pressed="${mode === "solo"}">
+            Play solo
+            <small>Multiple choice · instant feedback</small>
+          </button>
+          <button id="host" class="mode ${mode === "host" ? "selected" : ""}" aria-pressed="${mode === "host"}">
+            Host the room
+            <small>Read aloud · keep team scores</small>
+          </button>
+        </div>
+        <p class="note">${packCount ? `${packCount} extra pack${packCount === 1 ? "" : "s"} available from <code>packs/</code>.` : "The starter pack is ready."} You’ll choose a pack next.</p>
+      </section>
+      <p class="note" style="margin-top:20px">No accounts, subscriptions or installation. The host runs the quiz and keeps team scores.</p>
+      ${notice ? `<p class="note notice" role="status">${esc(notice)}</p>` : ""}
+    </div>
+  `;
   $("#solo").onclick = () => {
     capture();
     mode = "solo";
+    setupStep = "pack";
     setup();
   };
   $("#host").onclick = () => {
     capture();
     mode = "host";
+    setupStep = "pack";
     setup();
   };
+}
+
+/* ---------- step 2: pack ---------- */
+function renderSetupPack() {
+  const options = [
+    `<button class="pack-option ${currentPackId === null ? "selected" : ""}" data-pack="" aria-pressed="${currentPackId === null}">
+      <strong>${esc(STARTER.title)}</strong>
+      <small>${STARTER.questions.length} questions · built in</small>
+    </button>`,
+  ];
+  for (const p of packs) {
+    const mc = p.questions.filter((q) => q.options.length === 4).length;
+    const rounds = new Set(p.questions.map((q) => q.round)).size;
+    const sel = p.id === currentPackId;
+    options.push(
+      `<button class="pack-option ${sel ? "selected" : ""}" data-pack="${esc(p.id)}" aria-pressed="${sel}">
+        <strong>${esc(p.title || p.fileName || "Pack")}</strong>
+        <small>${p.questions.length} questions · ${mc} multiple choice · ${rounds} round${rounds === 1 ? "" : "s"}</small>
+      </button>`,
+    );
+  }
+  $("#app").innerHTML = `
+    <div class="wizard">
+      ${progressHTML(1)}
+      <span class="eyebrow">STEP 2 OF 3 · ${mode === "host" ? "HOSTING" : "PLAYING SOLO"} · CHOOSE YOUR QUESTIONS</span>
+      <h1>Pick a question pack.</h1>
+      <p class="lead">${packs.length ? `${packs.length + 1} pack${packs.length ? "s" : ""} available. Click one to continue.` : "Only the starter pack is loaded. Add JSON files to packs/ and list them in manifest.json."}</p>
+      ${notice ? `<p class="note notice" role="status">${esc(notice)}</p>` : ""}
+      <section class="card">
+        <div class="pack-grid">${options.join("")}</div>
+        <div class="row" style="margin-top:16px">
+          <button id="reload-packs">↻ Reload packs</button>
+        </div>
+        <p class="note" style="margin-top:14px">To add a pack, drop its <code>.json</code> in <code>packs/</code> and list the filename in <code>packs/manifest.json</code>.</p>
+      </section>
+      <div class="wizard-nav">
+        <button id="back">← Change mode</button>
+      </div>
+    </div>
+  `;
+  document.querySelectorAll("[data-pack]").forEach((b) => {
+    b.onclick = () => {
+      notice = "";
+      selectPack(b.dataset.pack || null, { silent: true });
+      setupStep = "configure";
+      setup();
+    };
+  });
+  $("#reload-packs").onclick = async () => {
+    packs = await loadBundledPacks();
+    const keep =
+      currentPackId && packs.some((p) => p.id === currentPackId)
+        ? currentPackId
+        : null;
+    selectPack(keep, { silent: true });
+    setup();
+  };
+  $("#back").onclick = () => {
+    setupStep = "mode";
+    setup();
+  };
+}
+
+/* ---------- step 3: settings ---------- */
+function renderSetupConfigure() {
+  const count = eligible().length;
+  const host = mode === "host";
+  const currentTitle = bank.title || bank.fileName || "Starter pack";
+
+  $("#app").innerHTML = `
+    <div class="wizard">
+      ${progressHTML(2)}
+      <span class="eyebrow">STEP 3 OF 3 · SETTINGS</span>
+      <div class="layout">
+        <section class="card">
+          <header class="row between" style="margin-bottom:8px">
+            <div>
+              <small class="eyebrow">${host ? "HOSTING" : "PLAYING SOLO"}</small>
+              <h2 style="margin:6px 0 0">${esc(currentTitle)}</h2>
+            </div>
+            <button id="change-pack">Change pack</button>
+          </header>
+          ${host ? `<label for="format">Question style</label>
+            <select id="format">
+              <option value="mc" ${format === "mc" ? "selected" : ""}>Multiple choice</option>
+              <option value="open" ${format === "open" ? "selected" : ""}>Open answer — no options shown</option>
+            </select>` : ""}
+          <div class="grid">
+            <div>
+              <label for="round">Round</label>
+              <select id="round">
+                <option value="all">Mix all rounds</option>
+                ${[...new Set(bank.questions.map((q) => q.round))]
+                  .map(
+                    (r) =>
+                      `<option ${round === r ? "selected" : ""} value="${esc(r)}">${esc(r)}</option>`,
+                  )
+                  .join("")}
+              </select>
+            </div>
+            <div>
+              <label for="amount">Questions</label>
+              <select id="amount">
+                ${[5, 10, 15, 20, 30, 50].map((n) => `<option ${n === amount ? "selected" : ""}>${n}</option>`).join("")}
+              </select>
+            </div>
+          </div>
+          <label for="order">Question order</label>
+          <select id="order">
+            <option value="random" ${random ? "selected" : ""}>Shuffle questions</option>
+            <option value="book" ${!random ? "selected" : ""}>Keep pack order</option>
+          </select>
+          ${host ? `<label for="teams">Teams (one per line, up to 12)</label>
+            <textarea id="teams" rows="3" maxlength="600">${esc(teamText)}</textarea>
+            <p class="note">Read the questions aloud. Colleagues answer aloud or on paper; only the host needs this screen.</p>` : ""}
+          <p class="note">${count} eligible questions · This game will use ${Math.min(amount, count)}.${mode === "solo" || format === "mc" ? " Only questions with prepared choices are included." : ""}</p>
+          <button id="start" class="primary full" ${!count ? "disabled" : ""}>${host ? "Start hosting" : "Let’s play"} →</button>
+        </section>
+        <aside>
+          <section class="card">
+            <h3>A room, not a login.</h3>
+            <p class="note">No accounts, subscriptions or installation. The host runs the quiz and keeps team scores.</p>
+            <p class="note">Book answers are preserved as printed, including potentially dated or inaccurate facts. Review before hosting.</p>
+          </section>
+        </aside>
+      </div>
+      <div class="wizard-nav">
+        <button id="back">← Change pack</button>
+      </div>
+    </div>
+  `;
+
   if ($("#format"))
     $("#format").onchange = (e) => {
       capture();
@@ -209,23 +349,16 @@ function setup() {
     capture();
     start();
   };
-  $("#reload-packs").onclick = async () => {
+  $("#change-pack").onclick = () => {
     capture();
-    packs = await loadBundledPacks();
-    const keep =
-      currentPackId && packs.some((p) => p.id === currentPackId)
-        ? currentPackId
-        : null;
-    selectPack(keep, { silent: true });
+    setupStep = "pack";
     setup();
   };
-  document.querySelectorAll("[data-pack]").forEach((b) => {
-    b.onclick = () => {
-      capture();
-      notice = "";
-      selectPack(b.dataset.pack || null);
-    };
-  });
+  $("#back").onclick = () => {
+    capture();
+    setupStep = "pack";
+    setup();
+  };
 }
 
 function capture() {
@@ -235,6 +368,7 @@ function capture() {
 
 /* ---------- game ---------- */
 function start() {
+  notice = "";
   const pool = eligible();
   if (!pool.length) return;
   const qs = (random ? shuffle(pool) : pool).slice(0, amount).map((q) => {
@@ -344,7 +478,10 @@ function finish() {
           }`
         : `<div class="score">${points} / ${game.questions.length}</div><p>${game.answers.filter((a) => a === null).length} unanswered · ${game.answers.filter((a) => a === -1).length} skipped</p>`
     }<div class="row divider"><button id="again" class="primary">Set up another quiz</button><button id="export">Download results</button></div></section>${!host ? `<section class="card" style="margin-top:24px"><h2>Your answer review</h2>${game.questions.map((q, i) => `<div class="review"><strong>${i + 1}. ${esc(q.question)}</strong><p>Your answer: ${esc(game.answers[i] === null ? "Unanswered" : game.answers[i] === -1 ? "Skipped" : q.options[game.answers[i]])}</p><p>Correct answer: <strong>${esc(q.options[q.correct])}</strong></p><small>${esc(q.answer)}</small></div>`).join("")}</section>` : ""}`;
-  $("#again").onclick = setup;
+  $("#again").onclick = () => {
+    setupStep = "mode";
+    setup();
+  };
   $("#export").onclick = () => {
     const result = {
       date: new Date().toISOString(),
