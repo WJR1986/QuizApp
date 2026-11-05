@@ -114,8 +114,8 @@ async function loadBundledPacks() {
   for (const file of files) {
     if (typeof file !== "string" || !file.trim()) continue;
     try {
-      const res = await fetch(PACKS_DIR + file, { cache: "no-cache" });
-      if (!res.ok) throw Error("HTTP " + res.status);
+      const res = await fetch(PACKS_DIR + file + "?t=" + Date.now(), { cache: "no-cache" });
+            if (!res.ok) throw Error("HTTP " + res.status);
       const data = validate(await res.json());
       loaded.push({ ...data, id: file, fileName: file });
     } catch (err) {
