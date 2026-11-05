@@ -1,0 +1,18 @@
+name: Cancel stuck Pages deployment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel the blocked deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            repos/WJR1986/QuizApp/pages/deployments/ef06d9735979483624803c209746a7ffc62ead0f/cancel
