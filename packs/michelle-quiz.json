@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "title": "Quiz Room — Michelle's Quiz",
+  "title": "Michelle's Quiz",
   "source": "Original question wording prepared for this app. Facts based on HBO's True Blood, Sarah J. Maas's Throne of Glass series, and Thomas Harris's The Silence of the Lambs (novel and 1991 film).",
   "questions": [
     {"id":"tb-sookie-1","round":"True Blood — Sookie & Bon Temps","category":"True Blood","question":"What is Sookie Stackhouse's job?","answer":"Waitress at Merlotte's","options":["Waitress at Merlotte's","Nurse at the local clinic","Teacher at the high school","Librarian at the county library"],"correct":0,"scoring":[]},
