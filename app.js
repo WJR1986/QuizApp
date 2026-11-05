@@ -96,7 +96,7 @@ function eligible() {
 async function loadBundledPacks() {
   let manifest;
   try {
-    const res = await fetch(MANIFEST_URL, { cache: "no-cache" });
+    const res = await fetch(MANIFEST_URL + "?t=" + Date.now(), { cache: "no-cache" });
     if (!res.ok) throw Error("HTTP " + res.status);
     manifest = await res.json();
   } catch (_) {
