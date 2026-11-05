@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "title": "Molly's Quiz",
+  "title": "Quiz Room — Molly's Quiz",
   "source": "Original question wording prepared for this app. Facts based on the Twilight Saga, Pretty Little Liars, the Dark Verse series by RuNyx, and classic girly films.",
   "questions": [
     {"id":"tw-bella-1","round":"Twilight — Bella Swan","category":"Twilight","question":"What is Bella Swan's full first name?","answer":"Isabella","options":["Isabella","Bella","Annabelle","Isabel"],"correct":0,"scoring":[]},
